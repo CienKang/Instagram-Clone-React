@@ -11,5 +11,3 @@ ReactDOM.render(
     </FirebaseContext.Provider>,  
     document.getElementById('root')
 );
-
-//  Start from 1:36:49 fcc
