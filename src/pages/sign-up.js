@@ -33,7 +33,7 @@ export default function SignUp() {
                     username: username.toLowerCase(),
                     fullName,
                     username: username.toLowerCase(),
-                    folloeing: [],
+                    following: [],
                     dateCreated: Date.now()
                 });
 

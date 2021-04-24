@@ -13,7 +13,7 @@ module.exports = {
             },
 
             black: {
-                light: '#005c98',
+                light: '#262626',
                 faded: '#00000059'
             },
 
