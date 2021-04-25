@@ -20,9 +20,9 @@ export default function SignUp() {
     const handleSignUp = async (event) => {
         event.preventDefault();
         const usernameExist = await doesUsernameExist(username);
-        if (!usernameExist.length){
+        if (!usernameExist.length) {
             try {
-                const createdUserResult = await firebase.auth().createUserWithEmailAndPassword(emailAddress,password);
+                const createdUserResult = await firebase.auth().createUserWithEmailAndPassword(emailAddress, password);
 
                 await createdUserResult.user.updateProfile({
                     displayName: username
@@ -46,7 +46,7 @@ export default function SignUp() {
                 setError(error.message);
             }
         }
-        else{
+        else {
             setError('That Username is already taken, please try another.');
         }
     };
@@ -72,25 +72,25 @@ export default function SignUp() {
                             aria-label="Enter your Username" type="text"
                             placeholder="Username" className="text-sm text-gray base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
                             onChange={({ target }) => setUsername(target.value)}
-                            value = {username}
+                            value={username}
                         />
                         <input
                             aria-label="Enter your Full Name" type="text"
                             placeholder="Full Name" className="text-sm text-gray base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
                             onChange={({ target }) => setFullName(target.value)}
-                            value = {fullName}
+                            value={fullName}
                         />
                         <input
                             aria-label="Enter your email address" type="text"
                             placeholder="Email Address" className="text-sm text-gray base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
                             onChange={({ target }) => setEmailAddress(target.value)}
-                            value = {emailAddress}
+                            value={emailAddress}
                         />
                         <input
                             aria-label="Enter your password" type="password"
                             placeholder="Password" className="text-sm text-gray base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
                             onChange={({ target }) => setPassword(target.value)}
-                            value = {password}
+                            value={password}
                         />
 
                         <button

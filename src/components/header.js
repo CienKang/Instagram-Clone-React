@@ -6,7 +6,7 @@ import * as ROUTES from '../constants/routes';
 
 
 export default function Header() {
-  const { user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { firebase } = useContext(FirebaseContext);
   const history = useHistory();
 
