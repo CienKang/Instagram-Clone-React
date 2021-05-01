@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {updateLoggedInUserFollowing,updateFollowedUserFollowers} from '../../services/firebase'
+import { updateLoggedInUserFollowing, updateFollowedUserFollowers } from '../../services/firebase'
 
-export default function SuggestedProfile({ spDocId, username, profileId, userId ,loggedInUserDocId}) {
+export default function SuggestedProfile({ spDocId, username, profileId, userId, loggedInUserDocId }) {
     const [followed, setFollowed] = useState(false);
 
-    async function handleFollwUser(){
+    async function handleFollwUser() {
         setFollowed(true);
 
-        await updateLoggedInUserFollowing(loggedInUserDocId,profileId,false);
-        await updateFollowedUserFollowers(spDocId,userId,false);
+        await updateLoggedInUserFollowing(loggedInUserDocId, profileId, false);
+        await updateFollowedUserFollowers(spDocId, userId, false);
     }
 
     return !followed ? (
@@ -25,11 +25,11 @@ export default function SuggestedProfile({ spDocId, username, profileId, userId 
                     <p className="font-bold text-sm"></p>
                 </Link>
             </div>
-                <button 
-                    className="text-xsfont-bold text-blue-medium"
-                    type="button"
-                    onClick={()=> console.log('Follow This')} >
-                        Follow
+            <button
+                className="text-xsfont-bold text-blue-medium"
+                type="button"
+                onClick={() => console.log('Follow This')} >
+                Follow
                 </button>
         </div>
     ) : null;

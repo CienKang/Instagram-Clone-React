@@ -42,5 +42,5 @@ Suggestions.propTypes = {
     userId: PropTypes.string,
     following: PropTypes.array,
     loggedInUserDocId: PropTypes.string,
-    spDocId:PropTypes.string
+    spDocId: PropTypes.string
 }
